@@ -53,7 +53,7 @@ def main():
         CUR_TIME = int(time.time())
         output.write(str(CUR_TIME) + "," + str(status) + "\n")
         output.close()
-        print(str(CUR_TIME) + "," + str(status) + "\n")
+        #print(str(CUR_TIME) + "," + str(status) + "\n")
         
         time.sleep(30.0 - ((time.time() - initialtime) % 30.0))
 
