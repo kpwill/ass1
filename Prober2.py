@@ -30,24 +30,24 @@ import sys, time, http.client
 
 def main():
     #sys.argv = ["http://www.cs.nyu.edu","C:\\Users\\kpwil\\Desktop\\ass1\\sample_output_3.txt"]
-    
+    #sys.argv[0] = python file name
     
     if len(sys.argv) < 2:
         print("Not enough arguments.")
         sys.exit
 
     #handle URLs that have http:// because it messes with the HTTPconnection later
-    URL = sys.argv[0]
+    URL = sys.argv[1]
     if URL.startswith("http://"):
         URL = URL[7:]
         
-    output = open(sys.argv[1],"w")
+    output = open(sys.argv[2],"w")
     output.write("URL="+URL+"\n")
     
     initialtime = int(time.time())
     
     while True:
-        output = open(sys.argv[1],"a")
+        output = open(sys.argv[2],"a")
         status = getstatuscode(URL)
         
         CUR_TIME = int(time.time())
